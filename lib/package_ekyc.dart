@@ -19,6 +19,7 @@ class PackageEkyc {
 
     Assets.isFromModules = true;
     var result = await appController.checkPermissionApp();
+    Get.back();
     Get.delete<AppController>();
     return result;
   }
@@ -34,6 +35,7 @@ class PackageEkyc {
     appController.guidNFC = guidNFC;
     AppConstSDK.apiKey = appController.sdkModel.apiKey;
     var result = await appController.checkPermissionApp();
+    Get.back();
     Get.delete<AppController>();
     return result;
   }

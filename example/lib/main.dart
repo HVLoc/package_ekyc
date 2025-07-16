@@ -79,21 +79,6 @@ class MyHomePage extends StatelessWidget {
                   );
                   await PackageEkyc.checkEKYC(
                     sdkRequestModel,
-                    guidNFC: (controller) {
-                      return Center(
-                        child: Column(
-                          children: [
-                            const Text('Hãy quét NFC'),
-                            ElevatedButton(
-                              onPressed: () async {
-                                await controller.scanNfc();
-                              },
-                              child: const Text('Quét CHIP với NFC'),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
                   ).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
