@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       // initialRoute: AppRoutes.initApp,
       getPages: RouteAppPage.route,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

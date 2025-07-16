@@ -6,10 +6,10 @@ environment:
   sdk: ">=3.4.0 <4.0.0"
   # flutter: '>=3.3.0'
 
-dependency_overrides:
-  dio: ^5.4.2+1
-  intl: 0.18.0
-  flutter_nfc_kit: 3.6.0
+# dependency_overrides:
+#   dio: ^5.4.2+1
+#   intl: 0.18.0
+#   flutter_nfc_kit: 3.6.0
 
 dependencies:
   # flutter_nfc_kit: 3.6.0

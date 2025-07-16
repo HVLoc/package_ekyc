@@ -22,80 +22,85 @@ class QRGuidePage extends BaseGetWidget<QRController> {
   // }
 
   Widget _buildBody() {
-    return Scaffold(
-      backgroundColor: AppColors.basicWhite,
-      body: Stack(
-        children: [
-          SizedBox(
-            height: Get.height,
-            width: Get.width,
-            child: Stack(
-              fit: StackFit.passthrough,
-              children: [
-                MobileScanner(
-                  // fit: BoxFit.contain,
-                  controller: controller.cameraController,
-                  onDetect: (capture) {
-                    final List<Barcode> barcodes = capture.barcodes;
-                    // final Uint8List? image = capture.image;
-                    // for (final barcode in barcodes) {
-                    if (barcodes.first.rawValue != null) {
-                      controller.getData(barcodes.first.rawValue ?? "");
-                    }
-                    // }
-                  },
-                ),
-                CustomPaint(
-                  painter: CustomShapePainterDaily(),
-                ),
-                _buildListGuild(),
-                _buildListImage(controller),
-                Positioned(
-                    top: Get.height / 4.2 - Get.height / 6 - 1,
-                    left: 40 - 2,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_LEFT_DOWN_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
-                    )),
-                Positioned(
-                    top: Get.height / 4.2 - Get.height / 6 - 1,
-                    right: 40 - 3,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_RIGHT_DOWN_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
-                    )),
-                Positioned(
-                    top: Get.height / 4.2 +
-                        Get.height / 6 -
-                        AppDimens.size45 +
-                        2,
-                    left: 40 - 2,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_LEFT_UP_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
-                    )),
-                Positioned(
-                    top: Get.height / 4.2 +
-                        Get.height / 6 -
-                        AppDimens.size45 +
-                        1,
-                    right: 40 - 1,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_RIGHT_UP_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
-                    )),
-              ],
+    return PopScope(
+      onPopInvokedWithResult: (didPop, result) {
+        Get.back();
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.basicWhite,
+        body: Stack(
+          children: [
+            SizedBox(
+              height: Get.height,
+              width: Get.width,
+              child: Stack(
+                fit: StackFit.passthrough,
+                children: [
+                  MobileScanner(
+                    // fit: BoxFit.contain,
+                    controller: controller.cameraController,
+                    onDetect: (capture) {
+                      final List<Barcode> barcodes = capture.barcodes;
+                      // final Uint8List? image = capture.image;
+                      // for (final barcode in barcodes) {
+                      if (barcodes.first.rawValue != null) {
+                        controller.getData(barcodes.first.rawValue ?? "");
+                      }
+                      // }
+                    },
+                  ),
+                  CustomPaint(
+                    painter: CustomShapePainterDaily(),
+                  ),
+                  _buildListGuild(),
+                  _buildListImage(controller),
+                  Positioned(
+                      top: Get.height / 4.2 - Get.height / 6 - 1,
+                      left: 40 - 2,
+                      child: Image.asset(
+                        Assets.ASSETS_SVG_ICON_CORNER_LEFT_DOWN_PNG,
+                        width: AppDimens.size45,
+                        height: AppDimens.size45,
+                        color: AppColors.primaryNavy,
+                      )),
+                  Positioned(
+                      top: Get.height / 4.2 - Get.height / 6 - 1,
+                      right: 40 - 3,
+                      child: Image.asset(
+                        Assets.ASSETS_SVG_ICON_CORNER_RIGHT_DOWN_PNG,
+                        width: AppDimens.size45,
+                        height: AppDimens.size45,
+                        color: AppColors.primaryNavy,
+                      )),
+                  Positioned(
+                      top: Get.height / 4.2 +
+                          Get.height / 6 -
+                          AppDimens.size45 +
+                          2,
+                      left: 40 - 2,
+                      child: Image.asset(
+                        Assets.ASSETS_SVG_ICON_CORNER_LEFT_UP_PNG,
+                        width: AppDimens.size45,
+                        height: AppDimens.size45,
+                        color: AppColors.primaryNavy,
+                      )),
+                  Positioned(
+                      top: Get.height / 4.2 +
+                          Get.height / 6 -
+                          AppDimens.size45 +
+                          1,
+                      right: 40 - 1,
+                      child: Image.asset(
+                        Assets.ASSETS_SVG_ICON_CORNER_RIGHT_UP_PNG,
+                        width: AppDimens.size45,
+                        height: AppDimens.size45,
+                        color: AppColors.primaryNavy,
+                      )),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
