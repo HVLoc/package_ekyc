@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:package_ekyc/package_ekyc.dart';
-import 'package:package_ekyc/shares/shares.src.dart';
-
 import 'package:package_ekyc/core/router/app_router.src.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 import 'package:package_ekyc/modules/sdk/sdk.src.dart';
+import 'package:package_ekyc/package_ekyc.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
 
 void main() {
@@ -57,24 +55,7 @@ class MyHomePage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   // Gọi hàm đọc NFC khi nhấn nút
-                  await PackageEkyc.readOnlyNFC(
-                          // guidNFC: (controller) {
-                          //   return Center(
-                          //     child: Column(
-                          //       children: [
-                          //         const Text('Hãy quét NFC'),
-                          //         ElevatedButton(
-                          //           onPressed: () async {
-                          //             await controller.scanNfc();
-                          //           },
-                          //           child: const Text('Quét CHIP với NFC'),
-                          //         ),
-                          //       ],
-                          //     ),
-                          //   );
-                          // },
-                          )
-                      .then((onValue) {
+                  await PackageEkyc.readOnlyNFC().then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
                       print(
