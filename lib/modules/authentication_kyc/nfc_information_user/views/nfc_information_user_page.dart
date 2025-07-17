@@ -54,7 +54,7 @@ class NfcInformationUserPage extends BaseGetWidget {
       ),
       bottomNavigationBar: Obx(
         () => Visibility(
-          visible: (!controller.sendNfcRequestModel.statusSuccess) &&
+          visible: (controller.sendNfcRequestModel.statusSuccess) &&
               controller.sendNfcRequestModel.visibleButtonDetail,
           child: Column(
             mainAxisSize: MainAxisSize.min,
