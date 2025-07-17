@@ -53,87 +53,83 @@ class NfcInformationUserPage extends BaseGetWidget {
         ),
       ),
       bottomNavigationBar: Obx(
-        () => Visibility(
-          visible: (controller.sendNfcRequestModel.statusSuccess) &&
-              controller.sendNfcRequestModel.visibleButtonDetail,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ButtonUtils.buildButton(
-                controller.authenticationVisible.value ||
-                        controller.appController.isOnlyNFC
-                    ? LocaleKeys.nfc_nfcSuccess.tr
-                    : LocaleKeys.registerCa_continue.tr,
-                () async {
-                  if (controller.authenticationVisible.value) {
-                    controller.returnToModule();
-                  } else {
-                    await controller.goPage();
-                  }
-                },
-                isLoading: controller.isShowLoading.value,
-                backgroundColor: AppColors.primaryBlue1,
-                width: AppDimens.sizeImg,
-                // borderRadius: BorderRadius.circular(AppDimens.radius4),
-                // height: AppDimens.iconHeightButton,
-              ).paddingSymmetric(
-                  horizontal: AppDimens.paddingDefaultHeight,
-                  vertical: AppDimens.padding15),
-              // Visibility(
-              //   visible: controller.authenticationVisible.value,
-              //   child: RichText(
-              //     textAlign: TextAlign.start,
-              //     text: TextSpan(
-              //       children: [
-              //         const TextSpan(
-              //           text: "Quay về ",
-              //           style: TextStyle(
-              //             height: 1.3,
-              //             color: AppColors.basicGrey40,
-              //             fontSize: AppDimens.sizeText13,
-              //           ),
-              //         ),
-              //         TextSpan(
-              //           text: LocaleKeys.home_other.tr,
-              //           recognizer: TapGestureRecognizer()
-              //             ..onTap = () {
-              //               Get.until((route) =>
-              //                   Get.currentRoute == AppRoutes.routeHome);
-              //             },
-              //           style: const TextStyle(
-              //             height: 1.3,
-              //             color: AppColors.primaryBlue1,
-              //             fontSize: AppDimens.sizeText13,
-              //             decoration: TextDecoration.underline,
-              //           ),
-              //         ),
-              //         const TextSpan(
-              //           text: " hoặc tiếp tục ",
-              //           style: TextStyle(
-              //             height: 1.3,
-              //             color: AppColors.basicBlack,
-              //             fontSize: AppDimens.sizeText13,
-              //           ),
-              //         ),
-              //         TextSpan(
-              //           text: LocaleKeys.biometric_authentication.tr,
-              //           recognizer: TapGestureRecognizer()
-              //             ..onTap = () {
-              //               controller.getToHome();
-              //             },
-              //           style: const TextStyle(
-              //             height: 1.3,
-              //             color: AppColors.primaryBlue1,
-              //             fontSize: AppDimens.sizeText13,
-              //             decoration: TextDecoration.underline,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ).paddingAll(AppDimens.padding12),
-              // ),
-            ],
-          ),
+        () => Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ButtonUtils.buildButton(
+              controller.authenticationVisible.value ||
+                      controller.appController.isOnlyNFC
+                  ? LocaleKeys.nfc_nfcSuccess.tr
+                  : LocaleKeys.registerCa_continue.tr,
+              () async {
+                if (controller.authenticationVisible.value) {
+                  controller.returnToModule();
+                } else {
+                  await controller.goPage();
+                }
+              },
+              isLoading: controller.isShowLoading.value,
+              backgroundColor: AppColors.primaryBlue1,
+              width: AppDimens.sizeImg,
+              // borderRadius: BorderRadius.circular(AppDimens.radius4),
+              // height: AppDimens.iconHeightButton,
+            ).paddingSymmetric(
+                horizontal: AppDimens.paddingDefaultHeight,
+                vertical: AppDimens.padding15),
+            // Visibility(
+            //   visible: controller.authenticationVisible.value,
+            //   child: RichText(
+            //     textAlign: TextAlign.start,
+            //     text: TextSpan(
+            //       children: [
+            //         const TextSpan(
+            //           text: "Quay về ",
+            //           style: TextStyle(
+            //             height: 1.3,
+            //             color: AppColors.basicGrey40,
+            //             fontSize: AppDimens.sizeText13,
+            //           ),
+            //         ),
+            //         TextSpan(
+            //           text: LocaleKeys.home_other.tr,
+            //           recognizer: TapGestureRecognizer()
+            //             ..onTap = () {
+            //               Get.until((route) =>
+            //                   Get.currentRoute == AppRoutes.routeHome);
+            //             },
+            //           style: const TextStyle(
+            //             height: 1.3,
+            //             color: AppColors.primaryBlue1,
+            //             fontSize: AppDimens.sizeText13,
+            //             decoration: TextDecoration.underline,
+            //           ),
+            //         ),
+            //         const TextSpan(
+            //           text: " hoặc tiếp tục ",
+            //           style: TextStyle(
+            //             height: 1.3,
+            //             color: AppColors.basicBlack,
+            //             fontSize: AppDimens.sizeText13,
+            //           ),
+            //         ),
+            //         TextSpan(
+            //           text: LocaleKeys.biometric_authentication.tr,
+            //           recognizer: TapGestureRecognizer()
+            //             ..onTap = () {
+            //               controller.getToHome();
+            //             },
+            //           style: const TextStyle(
+            //             height: 1.3,
+            //             color: AppColors.primaryBlue1,
+            //             fontSize: AppDimens.sizeText13,
+            //             decoration: TextDecoration.underline,
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ).paddingAll(AppDimens.padding12),
+            // ),
+          ],
         ),
       ),
     );
