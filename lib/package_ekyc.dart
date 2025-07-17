@@ -30,7 +30,7 @@ class PackageEkyc {
   }) async {
     Get.toNamed(AppRoutes.initApp);
     AppController appController = Get.put(AppController());
-    // Assets.isFromModules = true;
+    Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;
     appController.guidNFC = guidNFC;
     AppConstSDK.apiKey = appController.sdkModel.apiKey;

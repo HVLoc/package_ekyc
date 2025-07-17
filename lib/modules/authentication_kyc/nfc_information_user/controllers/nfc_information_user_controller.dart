@@ -135,6 +135,7 @@ class NfcInformationUserController extends BaseGetxController {
         if (value.status) {
           authenticationSuccess = value.data?.result == true;
           authenticationVisible.value = value.data?.result == true;
+          sendNfcRequestModel.statusSuccess = authenticationSuccess;
           appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
         } else {
           ShowDialog.showDialogNotification(
@@ -154,12 +155,12 @@ class NfcInformationUserController extends BaseGetxController {
     }
   }
 
-  void returnToNative() {
-    if (appController.isOnlyNFC) {
-      SystemNavigator.pop();
-    }
-    appController.sendDataToNative();
-  }
+  // void returnToNative() {
+  //   if (appController.isOnlyNFC) {
+  //     SystemNavigator.pop();
+  //   }
+  //   appController.sendDataToNative();
+  // }
 
   void returnToModule() {
     appController.sendDataToModulesEkyc();
