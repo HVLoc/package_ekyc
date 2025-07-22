@@ -4,7 +4,7 @@ class VerifyResponse {
   final bool status;
   final String timestamp;
   final String transId;
-  final Data? data;
+  final VerifySignatureData? data;
   final List<ErrorModelResponse>? errors;
 
   VerifyResponse({
@@ -20,7 +20,9 @@ class VerifyResponse {
       status: json['status'],
       timestamp: json['timestamp'],
       transId: json['transId'],
-      data: json["data"] != null ? Data.fromJson(json['data']) : null,
+      data: json["data"] != null
+          ? VerifySignatureData.fromJson(json['data'])
+          : null,
       errors: json["errors"] == null
           ? []
           : List<ErrorModelResponse>.from(
@@ -29,7 +31,7 @@ class VerifyResponse {
   }
 }
 
-class Data {
+class VerifySignatureData {
   final String signature;
   final String responseId;
   final int exitcode;
@@ -37,7 +39,7 @@ class Data {
   final String message;
   final int time;
 
-  Data({
+  VerifySignatureData({
     required this.signature,
     required this.responseId,
     required this.exitcode,
@@ -46,8 +48,8 @@ class Data {
     required this.time,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) {
-    return Data(
+  factory VerifySignatureData.fromJson(Map<String, dynamic> json) {
+    return VerifySignatureData(
       signature: json['signature'],
       responseId: json['responseId'],
       exitcode: json['exitcode'],
@@ -55,5 +57,15 @@ class Data {
       message: json['message'],
       time: json['time'],
     );
+  }
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['signature'] = signature;
+    data['responseId'] = responseId;
+    data['exitcode'] = exitcode;
+    data['result'] = result;
+    data['message'] = message;
+    data['time'] = time;
+    return data;
   }
 }

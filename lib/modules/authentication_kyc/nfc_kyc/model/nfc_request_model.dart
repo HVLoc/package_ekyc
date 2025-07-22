@@ -1,3 +1,5 @@
+import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/model/verify_sdk_response.dart';
+
 class SendNfcRequestModel {
   SendNfcRequestModel({
     this.sessionId,
@@ -16,6 +18,7 @@ class SendNfcRequestModel {
     this.aaPublicKey,
     this.keyAlg,
     this.method = "C06",
+    this.verifySignatureData,
   });
 
   String? sessionId;
@@ -39,6 +42,7 @@ class SendNfcRequestModel {
   bool verifyDocumentNumber = false;
 
   ///xác thư c06 chưa
+  VerifySignatureData? verifySignatureData;
 
   ///base64
   String? sodData;
@@ -192,5 +196,6 @@ class SendNfcRequestModel {
         "visibleButtonDetail": visibleButtonDetail,
         "kind": kind,
         "method": method,
+        "verifySignatureData": verifySignatureData?.toJson(),
       };
 }

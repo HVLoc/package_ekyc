@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/shares/package/export_package.dart';
 

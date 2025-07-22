@@ -1,9 +1,7 @@
-import 'package:flutter/services.dart';
 import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/generated/locales.g.dart';
 import 'package:package_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
-import 'package:package_ekyc/modules/overview/overview.src.dart';
 import 'package:package_ekyc/modules/sdk/sdk.src.dart';
 import 'package:package_ekyc/shares/utils/time/date_utils.dart';
 
@@ -135,7 +133,9 @@ class NfcInformationUserController extends BaseGetxController {
         if (value.status) {
           authenticationSuccess = value.data?.result == true;
           authenticationVisible.value = value.data?.result == true;
+          sendNfcRequestModel.verifySignatureData = value.data;
           sendNfcRequestModel.statusSuccess = authenticationSuccess;
+
           appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
         } else {
           ShowDialog.showDialogNotification(

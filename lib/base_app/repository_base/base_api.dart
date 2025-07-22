@@ -5,7 +5,6 @@ import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/const.dart';
 import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/shares/package/export_package.dart';
-import 'package:package_ekyc/shares/utils/log/dio_log.dart';
 
 class BaseApi {
   static Dio dio = getBaseDio();

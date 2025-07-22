@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:package_ekyc/assets.dart';
 import 'package:package_ekyc/generated/locales.g.dart';
 
 class LiveNessCollection {
