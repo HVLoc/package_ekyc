@@ -72,7 +72,6 @@ class MyHomePage extends StatelessWidget {
                   SdkRequestModel sdkRequestModel = SdkRequestModel(
                     merchantKey: "",
                     secretKey: "",
-                    method: "INTEGRITY", // INTEGRITY, C06
                     apiKey: "",
                     isProd: false,
                   );

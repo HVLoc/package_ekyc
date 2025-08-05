@@ -122,7 +122,6 @@ class AppController extends GetxController {
             merchantKey: data['merchantKey'] ?? "",
             secretKey: data['secretKey'] ?? "",
             apiKey: data['apiKey'] ?? "",
-            method: data['method'] ?? "",
             documentNumber: data['CCCD'],
             isProd: data['isProd'] ?? false,
           );

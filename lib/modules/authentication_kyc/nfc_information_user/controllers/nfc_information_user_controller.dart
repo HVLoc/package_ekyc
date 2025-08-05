@@ -72,9 +72,6 @@ class NfcInformationUserController extends BaseGetxController {
         imageBody = sendNfcRequestModel.bodyFileId;
         packageKind = sendNfcRequestModel.kind ?? AppConst.typeProduction;
 
-        //Set lại model cho request
-        sendNfcRequestModel.method = appController.sdkModel.method;
-
         // if (appController.typeAuthentication == AppConst.typeAuthentication) {
         //   await nfcRepository
         //       .sendNfcRepository(sendNfcRequestModel)

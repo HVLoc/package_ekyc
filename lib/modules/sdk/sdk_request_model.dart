@@ -4,7 +4,6 @@ class SdkRequestModel {
     this.secretKey = "",
     this.documentNumber = "",
     this.apiKey = "",
-    this.method = "C06",
     this.isProd = false,
   });
 
@@ -12,7 +11,6 @@ class SdkRequestModel {
   final String secretKey;
   final String documentNumber;
   final String apiKey;
-  final String method;
   final bool isProd;
 
   factory SdkRequestModel.fromJson(Map<String, dynamic> json) {
@@ -21,7 +19,6 @@ class SdkRequestModel {
       secretKey: json["secretKey"] ?? "",
       documentNumber: json["CCCD"] ?? "",
       apiKey: json["apiKey"] ?? "",
-      method: json["method"] ?? "",
       isProd: json["isProd"] ?? false,
     );
   }
@@ -30,7 +27,6 @@ class SdkRequestModel {
         "merchantKey": merchantKey,
         "secretKey": secretKey,
         "apiKey": apiKey,
-        "method": method,
         "CCCD": documentNumber,
         "isProd": isProd,
       };

@@ -17,7 +17,6 @@ class SendNfcRequestModel {
     this.aaSignature,
     this.aaPublicKey,
     this.keyAlg,
-    this.method = "C06",
     this.verifySignatureData,
   });
 
@@ -76,7 +75,6 @@ class SendNfcRequestModel {
   bool statusSuccess = false;
   bool visibleButtonDetail = true;
   String? kind;
-  String? method;
 
   factory SendNfcRequestModel.fromJson(Map<String, dynamic> json) {
     return SendNfcRequestModel(
@@ -116,7 +114,6 @@ class SendNfcRequestModel {
         "fileId": fileId,
         "bodyFileId": bodyFileId,
         "phone": phone,
-        "method": method,
       };
 
   Map<String, dynamic> toJson() => {
@@ -195,7 +192,6 @@ class SendNfcRequestModel {
         "statusSuccess": statusSuccess,
         "visibleButtonDetail": visibleButtonDetail,
         "kind": kind,
-        "method": method,
         "verifySignatureData": verifySignatureData?.toJson(),
       };
 }
