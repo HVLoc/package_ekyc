@@ -37,7 +37,7 @@ class AppColors {
   static const Color primaryBlue1 = Color(0xFFe2530c);
   static const Color primaryButtonGrey = Color(0xFF939393);
   static const Color primaryNavy = Color(0xFF1C1E66);
-  static const Color inputFill = Color(0xCCEAF7FF);
+  static const Color inputFill = Color(0xFFDBDBDB);
   static const Color inputFillSearch = Color(0xFFF2F2F2);
   static const Color iconDefault = Color(0xFF939393);
   static const Color borderColor = Color(0xFFFFFAE6);
