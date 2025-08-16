@@ -29,11 +29,6 @@ Widget _body(ScanNfcKycController controller) {
 Widget _buildInfor(ScanNfcKycController controller) {
   return Column(
     children: [
-      const TextUtils(
-        text: "Thông tin cá nhân",
-        availableStyle: StyleEnum.bodyBold,
-        color: AppColors.primaryNavy,
-      ),
       sdsSB8,
       Form(
           key: controller.formKey,
@@ -104,22 +99,6 @@ Widget _buildInfor(ScanNfcKycController controller) {
                       paddingModel: const EdgeInsets.symmetric(),
                     ),
                   ],
-                ),
-              ),
-              Visibility(
-                visible: controller.visiblePhone,
-                child: BaseFormLogin.buildInputData(
-                  title: LocaleKeys.client_phoneNumber.tr,
-                  textEditingController: controller.phoneController,
-                  isLoading: false,
-                  hintText: "",
-                  textInputType: TextInputType.number,
-                  currentNode: controller.phoneFocus,
-                  errorValidator: "",
-                  onValidator: (text) => UtilWidget.validatePhone(text),
-                  fillColor: AppColors.basicWhite.obs,
-                  autoFocus: true,
-                  paddingModel: const EdgeInsets.symmetric(),
                 ),
               ),
             ],

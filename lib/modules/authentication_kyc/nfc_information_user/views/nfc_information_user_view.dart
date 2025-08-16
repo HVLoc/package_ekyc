@@ -9,12 +9,6 @@ Widget _buildListGuild(NfcInformationUserController controller) {
               controller.sendNfcRequestModel.isView,
           child: Row(
             children: [
-              SvgPicture.asset(
-                controller.authenticationSuccess ||
-                        controller.sendNfcRequestModel.statusSuccess
-                    ? Assets.ASSETS_SVG_ICON_DONE_SVG
-                    : Assets.ASSETS_SVG_ICON_CANCEL_AUTHENTICATION_SVG,
-              ),
               sdsSBWidth5,
               Expanded(
                 child: RichText(
@@ -170,7 +164,8 @@ Widget _buildItemText(String title, String? content) {
               child: TextUtils(
                 text: content ?? "",
                 availableStyle: StyleEnum.body14,
-                color: AppColors.primaryBlue1,
+                color: AppColors.basicBlack,
+                fontWeight: FontWeight.bold,
                 maxLine: 3,
                 textAlign: TextAlign.end,
               ),

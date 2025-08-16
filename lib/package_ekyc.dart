@@ -10,6 +10,7 @@ import 'modules/sdk/sdk.src.dart';
 class PackageEkyc {
   static Future<SendNfcRequestModel?> readOnlyNFC({
     GuidNFC? guidNFC,
+    String? documentNumber,
   }) async {
     Get.toNamed(AppRoutes.initApp);
     AppController appController = Get.put(AppController());
@@ -18,6 +19,9 @@ class PackageEkyc {
     appController.guidNFC = guidNFC;
 
     Assets.isFromModules = true;
+    if (documentNumber != null && documentNumber.length == 12) {
+      appController.qrUserInformation.documentNumber = documentNumber;
+    }
     var result = await appController.checkPermissionApp();
     Get.back();
     Get.delete<AppController>();

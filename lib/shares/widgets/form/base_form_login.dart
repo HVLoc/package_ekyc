@@ -218,12 +218,6 @@ class BaseFormLogin {
             left: AppDimens.paddingDefault,
           ),
           filled: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(AppDimens.radius8),
-            borderSide: const BorderSide(
-              color: AppColors.secondaryNavyPastel,
-            ),
-          ),
           obscureText: isPassword,
           iconLeading: iconLeading,
           prefixIconColor: prefixIconColor,

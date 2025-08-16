@@ -65,11 +65,7 @@ class NfcDialogController extends BaseGetxController {
       if (Get.isBottomSheetOpen == true) {
         Get.back();
       }
-      if (Get.isRegistered<ScanNfcKycController>()) {
-        ScanNfcKycController scanNfcKycController =
-            Get.find<ScanNfcKycController>();
-        sendNfcRequestModel.phone = scanNfcKycController.phoneController.text;
-      }
+
       Get.toNamed(
         AppRoutes.routeNfcInformationUser,
         arguments: sendNfcRequestModel,

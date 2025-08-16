@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:package_ekyc/assets.dart';
 import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/shares/shares.src.dart';
@@ -13,11 +12,9 @@ class SplashPage extends GetView<AppController> {
     return Container(
       color: AppColors.basicGrey4,
       alignment: Alignment.center,
-      child: Center(
-        child: SvgPicture.asset(
-          Assets.ASSETS_SVG_ICON_KYC_SVG,
-          width: 136,
-          height: 115,
+      child: const Center(
+        child: FlutterLogo(
+          size: 100,
         ),
       ),
     );

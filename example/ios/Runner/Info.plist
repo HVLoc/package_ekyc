@@ -10,7 +10,7 @@
 		<string>en-US</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>Package Ekyc</string>
+	<string>Demo NFC</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,7 +23,7 @@
 		<string>en-US</string>
 	</array>
 	<key>CFBundleName</key>
-	<string>package_ekyc_example</string>
+	<string>Demo NFC</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

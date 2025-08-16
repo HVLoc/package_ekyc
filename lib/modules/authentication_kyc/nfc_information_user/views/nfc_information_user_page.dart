@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:package_ekyc/assets.dart';
 import 'package:package_ekyc/base_app/base_app.src.dart';
 import 'package:package_ekyc/core/core.src.dart';
 import 'package:package_ekyc/generated/locales.g.dart';
@@ -32,25 +31,8 @@ class NfcInformationUserPage extends BaseGetWidget {
         backgroundColor: AppColors.colorTransparent,
       ),
       body: buildLoadingOverlay(
-        () => Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                Assets.ASSETS_JPG_IMAGE_BANNER_PNG,
-              ),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Stack(
-            children: [
-              Container(
-                color: Colors.white.withOpacity(0.9),
-              ),
-              _buildListGuild(controller)
-                  .paddingSymmetric(horizontal: AppDimens.paddingDefaultHeight),
-            ],
-          ),
-        ),
+        () => _buildListGuild(controller)
+            .paddingSymmetric(horizontal: AppDimens.paddingDefaultHeight),
       ),
       bottomNavigationBar: Obx(
         () => Column(

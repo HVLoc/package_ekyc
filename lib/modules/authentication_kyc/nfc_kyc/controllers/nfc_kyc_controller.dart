@@ -16,13 +16,11 @@ class ScanNfcKycController extends BaseGetxController
   final userNameController = TextEditingController();
   final dobController = TextEditingController();
   final doeController = TextEditingController();
-  final phoneController = TextEditingController();
   AppController appController = Get.find<AppController>();
   final Rx<FocusNode> idDocumentFocus = FocusNode().obs;
   final Rx<FocusNode> userNameFocus = FocusNode().obs;
   final Rx<FocusNode> dobFocus = FocusNode().obs;
   final Rx<FocusNode> doeFocus = FocusNode().obs;
-  final Rx<FocusNode> phoneFocus = FocusNode().obs;
   bool visiblePhone = true;
 
   String statusNFC = "";
